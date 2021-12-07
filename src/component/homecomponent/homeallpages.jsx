@@ -1,12 +1,47 @@
-import { Grid, Pagination, Typography } from "@mui/material";
+import { Button, Divider, Grid, Pagination, Typography } from "@mui/material";
 import React from "react";
+import DropDownComponent from "../dropdowncustom/dropdowncustom";
 import HomeCard from "./HomeCard";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Homeallpages = () => {
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <Grid item container xs={9} spacing={2}>
+          <Grid
+            item
+            container
+            xs={12}
+            spacing={2}
+            style={{ marginBottom: "20px" }}
+          >
+            <Grid item xs={2.5}>
+              <DropDownComponent title="Skill" />
+            </Grid>
+            <Grid item xs={2.5}>
+              <DropDownComponent title="Duration" />
+            </Grid>
+            <Grid item xs={2.5}>
+              <DropDownComponent title="Scope" />
+            </Grid>
+            <Grid item xs={2.5}>
+              <DropDownComponent title="Intent" />
+            </Grid>
+            <Grid item xs={2}>
+              <Button
+                style={{ height: "100%" }}
+                variant="outlined"
+                size="large"
+                endIcon={<SearchIcon />}
+              >
+                Search
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid xs={12}>
+            <Divider />
+          </Grid>
           <Grid item xs={3}>
             <HomeCard />
           </Grid>
